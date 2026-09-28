@@ -1,0 +1,15 @@
+[versions]
+# Project
+agp = "9.2.1"
+kotlin = "2.3.0"
+version = "1.0.0"
+
+# CMP
+cmp = "1.10.0"
+
+[libraries]
+# Gradle Plugin
+android-gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-multiplatform-gradle-plugin = { module = "org.jetbrains.kotlin.multiplatform:org.jetbrains.kotlin.multiplatform.gradle.plugin", version.ref = "kotlin" }
+compose-multiplatform-gradle-plugin = { module = "org.jetbrains.compose:org.jetbrains.compose.gradle.plugin", version.ref = "cmp" }

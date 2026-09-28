@@ -1,0 +1,23 @@
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+import org.gradle.kotlin.dsl.configure
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension
+import tw.boris4110799.composing.convention.configureKotlinMultiplatform
+
+class MultiplatformLibraryConventionPlugin : Plugin<Project> {
+    override fun apply(target: Project) = with(target) {
+        with(pluginManager) {
+            apply("com.android.kotlin.multiplatform.library")
+            apply("org.jetbrains.kotlin.multiplatform")
+        }
+
+        extensions.configure<KotlinMultiplatformExtension> {
+            configureKotlinMultiplatform(this)
+        }
+
+        extensions.configure<KotlinProjectExtension> {
+            jvmToolchain(17)
+        }
+    }
+}
